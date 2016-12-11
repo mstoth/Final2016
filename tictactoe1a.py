@@ -22,7 +22,6 @@ A good choice is a 3x3 matrix.
 Each element in the matrix is either an 'x', 'o', or ' ' (blank)
 
 Part 1. Create a function to print out the board given the matrix as an input.
-You need to fix the return statements to return the proper string. 
 
 Here's our class
 
@@ -34,24 +33,26 @@ class TicTacToe(object):
         # we need to create a matrix to represent the board here.
         # something like self.matrix=...
         self.matrix=[] # this is an empty matrix. you need to make it a 3x3
+        self.matrix=[[' ' for i in range(3)] for j in range(3)]
 
     def line(self):
-        return ""
+        return('-----')
 
     def line1(self):
-        return ""
+        return self.matrix[0][0]+'|'+self.matrix[1][0]+'|'+self.matrix[2][0]
     
     def line2(self):
-        return ""
+        return self.matrix[0][1]+'|'+self.matrix[1][1]+'|'+self.matrix[2][1]
     
     def line3(self):
-        return ""
+        return self.matrix[0][2]+'|'+self.matrix[1][2]+'|'+self.matrix[2][2]
     
     def printBoard(self):
-        return ""
+        return self.line1()+"\n"+self.line()+'\n'+self.line2()+'\n'+\
+               self.line()+'\n'+self.line3()+'\n'
         
 """
-Here are the tests 
+Here are the tests we need
 """
 
 class testTicTacToe(unittest.TestCase):
